@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 :root {
   --bg-color: #080808;
   --card-bg: rgba(255, 255, 255, 0.05);
@@ -211,18 +211,15 @@ body {
 }
 
 .hero-img {
-  width: 100%;
-  height: 100%;
+  width: 40%;
   display: block;
-  top: 0;
-  bottom: 100%;
-  z-index: -1; 
+  margin: 0 auto;
 }
 
 .hero-title {
-  font-family: 'Times New Roman', Times, serif;
+  font-family: 'Playfair Display';
   font-style:oblique;
-  font-size: 2.5rem;
+  font-size: 4rem;
   font-weight: 800;
   letter-spacing: -0.03em;
   margin-bottom: 70px;
@@ -258,4 +255,70 @@ body {
   color: var(--text-muted);
   letter-spacing: 0.05em;
   text-transform: uppercase;
+}
+
+/* Comment Form Styling */
+.comment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.input-group textarea {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 14px 16px;
+  color: var(--text-main);
+  font-family: inherit;
+  font-size: 0.95rem;
+  resize: vertical;
+  outline: none;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.input-group textarea:focus {
+  border-color: var(--accent-glow);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Base Submit Button */
+.submit-btn {
+  align-self: flex-start;
+  padding: 12px 24px;
+  border-radius: 50px;
+  border: 1px solid var(--card-border);
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-main);
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submit-btn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-1px);
+}
+
+/* Loading State */
+.submit-btn.loading {
+  background: rgba(255, 255, 255, 0.2);
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Success State */
+.submit-btn.success {
+  background-color: #34d399;
+  color: #131313;
+  border-color: #34d399;
+}
+
+/* Error State */
+.submit-btn.error {
+  background-color: #fb3737;
+  color: #ffffff;
+  border-color: #fb3737;
 }
